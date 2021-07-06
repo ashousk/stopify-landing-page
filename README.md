@@ -3,7 +3,6 @@
 Le mini site de l'entreprise contient 2 pages :
 - la page d'acceuil
 - la page de contact
-- une page qui n'hexiste pas
 
 Le site est généré par le framework [hugo](https://gohugo.io/) et le thème utilisé est [bigspring](https://themes.gohugo.io/bigspring-hugo-startup-theme/).
 Les sources du site sont présentes dans le dossier nommé `website`.
