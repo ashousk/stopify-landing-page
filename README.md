@@ -31,4 +31,4 @@ executer docker-compose build pour appliquer la MaJ
 git status pour voir les modifications
 git add README.md
 git commit avec un commentaire
-git pous pour la MaJ sur GitHub
+git push pour la MaJ sur GitHub
