@@ -25,4 +25,4 @@ Un service nommé `dev_server` est défini dans le fichier docker-compose.yml.
 CTRL+C ou `docker-compose down`
 
 ### Changer la version d'hugo installée dans l'image Docker
-\\ À écrire \\
+modification du fichier /stopify-landing-page/docker-image/_script/hugo.sh en mettant HUGO_VERSION="0.85.0"
