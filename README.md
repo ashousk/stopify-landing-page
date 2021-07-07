@@ -13,7 +13,7 @@ La génération du site peut être simulée en local grâce à une image docker 
 
 Un service nommé `dev_server` est défini dans le fichier docker-compose.yml.
 - Le stage de build du service crée une image docker dont le `Dockerfile` et les scripts associés se trouvent dans le dossier `docker-image`.
-- Lorsque le service est lancé la commande exécutée par le container est `hugo server --bind-"0.0.0.0"` avec un mapping du dossier `website` sur le volume `/src` du container et avec un mapping du port 1313 du container sur le port 1313 de la machine qui fait tourner docker. Cette commande permet de lancer hugo en mode serveur afin de voir en live toutes les modifications apportées au site en ouvrant l'URL http://localhost:1313.
+- Lorsque le service est lancé la commande exécutée par le container est `hugo server --bind="0.0.0.0"` avec un mapping du dossier `website` sur le volume `/src` du container et avec un mapping du port 1313 du container sur le port 1313 de la machine qui fait tourner docker. Cette commande permet de lancer hugo en mode serveur afin de voir en live toutes les modifications apportées au site en ouvrant l'URL http://localhost:1313.
 
 ### Comment (re)build l'image de l'environnement de dev
 `docker-compose build`
@@ -25,7 +25,14 @@ Un service nommé `dev_server` est défini dans le fichier docker-compose.yml.
 CTRL+C ou `docker-compose down`
 
 ### Changer la version d'hugo installée dans l'image Docker
-\\ À écrire \\
+
+faire le fork avec git clone
+modification du fichier /stopify-landing-page/docker-image/_script/hugo.sh en mettant HUGO_VERSION="0.85.0"
+executer docker-compose build pour appliquer la MaJ
+git status pour voir les modifications
+git add README.md
+git commit avec un commentaire
+git push pour la MaJ sur GitHub
 
 ## Procédure d'Intégration et Déploiement Continu sur GitHub Pages
 L'intégration et le déploiement continus sur `GitHub Pages` sont effectués via github actions.
