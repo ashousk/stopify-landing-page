@@ -3,14 +3,28 @@ name: S3 upload
 on:
   push:
     branches:
-      - gh-pages
+      - main
   pull_request:
 
-jobs:
+jobs:  
   deploy:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.85.0'
+          extended: true
+
+      - name: Build
+        run: hugo --minify -e gh-pages -s website
+
+      - name: Deploy
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
