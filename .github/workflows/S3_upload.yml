@@ -3,7 +3,7 @@ name: S3 upload
 on:
   push:
     branches:
-      - main
+      - gh-pages
   pull_request:
 
 jobs:
