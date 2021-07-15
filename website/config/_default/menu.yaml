@@ -9,6 +9,5 @@ main:
   weigh: 2
 - identifier: contact
   name: Contact
-  url: contact
   url: contact/
   weigh: 2
