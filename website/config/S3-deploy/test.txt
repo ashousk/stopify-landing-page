@@ -1,5 +1,0 @@
-.
-q
-exit
-:qw
-end
