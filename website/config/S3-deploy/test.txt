@@ -1,0 +1,5 @@
+.
+q
+exit
+:qw
+end
